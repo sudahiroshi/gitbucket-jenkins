@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "	location /jenkins {" >> /etc/nginx/sites-enabled/default
+echo "		proxy_pass http://"$JENKINS_PORT_8080_TCP_ADDR":8080;" >> /etc/nginx/sites-enabled/default
+echo "	}" >> /etc/nginx/sites-enabled/default
+echo "}" >> /etc/nginx/sites-enabled/default
+nginx
