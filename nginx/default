@@ -6,6 +6,7 @@ server {
 	proxy_set_header X-Forwarded-Server $host; # プロキシサーバのホスト名
 	proxy_set_header X-Real-IP $remote_addr;
 
-	access_log	/var/log/nginx/localhost.access.log;
-	error_log	/var/log/nginx/localhost.error.log;
-
+	location / {
+		root /usr/share/nginx/www;
+		index	intdex.html;
+	}

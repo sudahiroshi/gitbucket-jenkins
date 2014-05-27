@@ -9,7 +9,7 @@ $ docker build -t sudahiroshi/jenkins .
 ## Boot
 
 ```
-$ docker run -d -p 8080:8080 -v /share/jenkins:/var/lib/jenkins sudahiroshi/jenkins
+$ docker run -d -p 8080:8080 -v /share/jenkins:/var/lib/jenkins --name jenkins sudahiroshi/jenkins
 ```
 
 ## Reference

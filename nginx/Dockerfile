@@ -14,7 +14,7 @@ VOLUME [ "/var/log/nginx" ]
 WORKDIR /etc/nginx
 
 CMD [ "/root/run" ]
-#CMD [ "nginx" ]
+
 EXPOSE 80
 EXPOSE 443
 

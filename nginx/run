@@ -1,6 +1,19 @@
 #!/bin/bash
-echo "	location /jenkins {" >> /etc/nginx/sites-enabled/default
-echo "		proxy_pass http://"$JENKINS_PORT_8080_TCP_ADDR":8080;" >> /etc/nginx/sites-enabled/default
-echo "	}" >> /etc/nginx/sites-enabled/default
-echo "}" >> /etc/nginx/sites-enabled/default
+if [ -n "$JENKINS_PORT_8080_TCP_ADDR" ]; then
+cat <<EOF >>/etc/nginx/sites-enabled/default
+	location /jenkins {
+		proxy_pass http://$JENKINS_PORT_8080_TCP_ADDR:8080;
+	}
+EOF
+fi
+
+if [ -n "$GITBUCKET_PORT_8000_TCP_ADDR" ]; then
+cat <<EOF >>/etc/nginx/sites-enabled/default
+	location /gitbucket {
+		proxy_pass http://$GITBUCKET_PORT_8000_TCP_ADDR:8000;
+	}
+EOF
+fi
+
+echo "}" >>/etc/nginx/sites-enabled/default
 nginx
