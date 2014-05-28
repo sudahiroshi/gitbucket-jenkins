@@ -6,18 +6,18 @@ Boot GitBucket and Jenkins using docker and boot2docker.
 ## Setup
 
 ```
-$ vargrant up
-$ cd gitbucket
-$ docker build -t sudahiroshi/gitbucket .
-$ docker run -d -p 8000:8000 -v /share/gitbucket:/var/lib/gitbucket --name gitbucket sudahiroshi/gitbucket
-$ cd ..
-$ cd jenkins
-$ docker build -t sudahiroshi/jenkins .
-$ docker run -d -p 8080:8080 -v /share/jenkins:/var/lib/jenkins --name jenkins sudahiroshi/jenkins
-$ cd ..
-$ cd nginx
-$ docker build -t sudahiroshi/nginx .
-$ docker run -d -p 80:80 --link jenkins:jenkins --link gitbucket:gitbucket sudahiroshi/nginx
+~$ git clone https://github.com/sudahiroshi/gitbucket-jenkins.git
+~$ cd gitbucket-jenkins/boot2docker
+~/gitbucket-jenkins/boot2docker$ vargrant up
+~/gitbucket-jenkins/boot2docker$ cd ../gitbucket
+~/gitbucket-jenkins/gitbucket$ docker build -t sudahiroshi/gitbucket .
+~/gitbucket-jenkins/gitbucket$ docker run -d -p 8000:8000 -v /share/gitbucket:/var/lib/gitbucket --name gitbucket sudahiroshi/gitbucket
+~/gitbucket-jenkins/gitbucket$ cd ../jenkins
+~/gitbucket-jenkins/jenkins$ docker build -t sudahiroshi/jenkins .
+~/gitbucket-jenkins/jenkins$ docker run -d -p 8080:8080 -v /share/jenkins:/var/lib/jenkins --name jenkins sudahiroshi/jenkins
+~/gitbucket-jenkins/jenkins$ cd ../nginx
+~/gitbucket-jenkins/nginx$ docker build -t sudahiroshi/nginx .
+~/gitbucket-jenkins/nginx$ docker run -d -p 80:80 --link jenkins:jenkins --link gitbucket:gitbucket sudahiroshi/nginx
 ```
 
 ## Access form your Web browser
