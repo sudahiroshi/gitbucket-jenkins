@@ -8,6 +8,8 @@ Boot GitBucket and Jenkins using docker and boot2docker.
 ```
 ~$ git clone https://github.com/sudahiroshi/gitbucket-jenkins.git
 ~$ cd gitbucket-jenkins/boot2docker
+~/gitbucket-jenkins$ mkdir data
+~/gitbucket-jenkins$ cd boot2docker
 ~/gitbucket-jenkins/boot2docker$ vargrant up
 ~/gitbucket-jenkins/boot2docker$ cd ../gitbucket
 ~/gitbucket-jenkins/gitbucket$ docker build -t sudahiroshi/gitbucket .
