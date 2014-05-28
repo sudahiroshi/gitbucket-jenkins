@@ -10,7 +10,7 @@ Boot GitBucket and Jenkins using docker and boot2docker.
 ~$ cd gitbucket-jenkins
 ~/gitbucket-jenkins$ mkdir data
 ~/gitbucket-jenkins$ cd boot2docker
-~/gitbucket-jenkins/boot2docker$ vargrant up
+~/gitbucket-jenkins/boot2docker$ vagrant up
 ~/gitbucket-jenkins/boot2docker$ cd ../gitbucket
 ~/gitbucket-jenkins/gitbucket$ docker build -t sudahiroshi/gitbucket .
 ~/gitbucket-jenkins/gitbucket$ docker run -d -p 8000:8000 -v /share/gitbucket:/var/lib/gitbucket --name gitbucket sudahiroshi/gitbucket
